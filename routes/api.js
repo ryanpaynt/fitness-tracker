@@ -18,4 +18,11 @@ app.post("/api/workouts", (req,res) => {
     });
 });
 
-
+// range
+app.get("api/workouts/range", (req,res) =>{
+    Workout.create(body)
+    .then(dbWorkout => res.json(dbWorkout))
+    .catch(err => {
+        res.error(404).json(err)
+    });
+});
