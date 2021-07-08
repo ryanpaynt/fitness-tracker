@@ -28,7 +28,7 @@ app.get("/api/workouts/range", (req,res) =>{
     });
 });
 
-app.put("/api/workouts/:id", ({body.params}, res) =>{
+app.put("/api/workouts/:id", ({body,params}, res) =>{
     Workout.findByIdAndUpdate(
         params.id,
         {$push:{excersises:body} },
