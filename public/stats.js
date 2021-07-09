@@ -49,6 +49,7 @@ function populateChart(data) {
     },
     options: {
       responsive: true,
+      plugins: {
       title: {
         display: true,
         text: 'Time Spent Working Out (Last 7 days)',
@@ -58,6 +59,7 @@ function populateChart(data) {
           beginAtZero: true,
         },
       },
+    },
     },
   });
 
@@ -90,6 +92,7 @@ function populateChart(data) {
       ],
     },
     options: {
+      plugins:{
       title: {
         display: true,
         text: 'Pounds Lifted (Last 7 days)',
@@ -103,6 +106,7 @@ function populateChart(data) {
           },
         ],
       },
+    },
     },
   });
 }
