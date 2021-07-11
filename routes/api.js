@@ -23,7 +23,14 @@ router.get("/api/workouts", (req, res) => {
 router.get("/api/workouts/range", (req, res) => {
     db.Workout.find({})
     .then(dbWorkout => {
-        dbWorkout.aggregate([{ $set: { totalDuration: { $sum: '$exercises.duration' } } }])
+
+        dbWorkout.forEach(workout => {
+            var total = 0;
+            workout.exercises.forEach(e => {
+                total += e.duration;
+            });
+            workout.totalDuration = total;
+        });
         res.json(dbWorkout)
     })
     .catch(err => {
