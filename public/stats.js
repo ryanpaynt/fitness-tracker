@@ -28,23 +28,13 @@ function populateChart(data) {
     // Use JavaScript's `Intl` object to help format dates
     return new Intl.DateTimeFormat('en-US', {
       weekday: 'short',
-      month: 'short',
-      day: 'numeric',
     }).format(date);
   });
 
   let lineChart = new Chart(line, {
     type: 'line',
     data: {
-      labels: [
-        "Sunday",
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday"
-      ],
+      labels,
       datasets: [
         {
           label: 'Workout Duration In Minutes',
@@ -57,7 +47,6 @@ function populateChart(data) {
     },
     options: {
       responsive: true,
-      plugins: {
       title: {
         display: true,
         text: 'Time Spent Working Out (Last 7 days)',
@@ -68,21 +57,12 @@ function populateChart(data) {
         },
       },
     },
-    },
   });
 
   let barChart = new Chart(bar, {
     type: 'bar',
     data: {
-      labels: [
-        "Sunday",
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday"
-      ],
+      labels,
       datasets: [
         {
           label: 'Pounds',
@@ -108,7 +88,6 @@ function populateChart(data) {
       ],
     },
     options: {
-      plugins:{
       title: {
         display: true,
         text: 'Pounds Lifted (Last 7 days)',
@@ -122,7 +101,6 @@ function populateChart(data) {
           },
         ],
       },
-    },
     },
   });
 }
