@@ -21,7 +21,7 @@ router.get("/api/workouts", (req, res) => {
 
 // range
 router.get("/api/workouts/range", (req, res) => {
-    db.Workout.find({})
+    db.Workout.find().limit(7).sort({ 'day': -1 })
     .then(dbWorkout => {
 
         dbWorkout.forEach(workout => {

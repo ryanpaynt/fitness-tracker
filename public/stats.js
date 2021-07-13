@@ -28,6 +28,8 @@ function populateChart(data) {
     // Use JavaScript's `Intl` object to help format dates
     return new Intl.DateTimeFormat('en-US', {
       weekday: 'short',
+      month: 'short',
+      day: 'numeric',
     }).format(date);
   });
 
